@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Pick a playful, people-friendly dare for your next hangout." />
+    <meta name="theme-color" content="#f4efe6" />
+    <title>Go On Then - Dare Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="topbar">
+        <a class="brand" href="./" aria-label="Go On Then home">
+          <span class="brand-mark" aria-hidden="true">!</span>
+          <span>go on then</span>
+        </a>
+        <div class="topbar-note"><span class="status-dot"></span> no sign-up. just vibes.</div>
+      </header>
+
+      <main>
+        <section class="hero" aria-labelledby="page-title">
+          <div class="hero-copy">
+            <p class="eyebrow">A little nudge toward fun</p>
+            <h1 id="page-title">Do something<br /><em>unexpected.</em></h1>
+            <p class="hero-intro">A pocket-sized dare machine for parties, sleepovers, first dates, and very brave Tuesdays.</p>
+          </div>
+          <div class="hero-stamp" aria-hidden="true">
+            <span>READY</span>
+            <strong>?</strong>
+            <small>make it interesting</small>
+          </div>
+        </section>
+
+        <section class="generator-layout" aria-label="Dare generator">
+          <aside class="controls-panel">
+            <div>
+              <p class="panel-label">01 / Set the mood</p>
+              <div class="filter-group" role="group" aria-label="Dare categories">
+                <button class="filter-button is-active" data-category="all" type="button">Anything</button>
+                <button class="filter-button" data-category="social" type="button">Social</button>
+                <button class="filter-button" data-category="silly" type="button">Silly</button>
+                <button class="filter-button" data-category="creative" type="button">Creative</button>
+                <button class="filter-button" data-category="brave" type="button">Brave</button>
+              </div>
+            </div>
+
+            <div class="difficulty-control">
+              <div class="difficulty-heading">
+                <p class="panel-label">02 / How bold?</p>
+                <span id="difficulty-value">Any level</span>
+              </div>
+              <input id="difficulty" type="range" min="1" max="3" value="3" aria-label="Dare difficulty" />
+              <div class="range-labels"><span>gentle</span><span>bold</span></div>
+            </div>
+
+            <p class="safety-note"><span aria-hidden="true">+</span> Good dares are consensual, kind, and easy to opt out of.</p>
+          </aside>
+
+          <div class="dare-stage">
+            <div class="dare-card" aria-live="polite">
+              <div class="card-topline"><span id="dare-number">DARE 001</span><span id="dare-category">ANYTHING</span></div>
+              <div class="card-body">
+                <span class="quote-mark" aria-hidden="true">“</span>
+                <p id="dare-text">Give a dramatic acceptance speech for winning an award nobody else knows about.</p>
+              </div>
+              <div class="card-footer"><span id="dare-difficulty">LEVEL 2 / 3</span><span class="card-spark" aria-hidden="true">✳</span></div>
+            </div>
+            <div class="stage-actions">
+              <button class="secondary-button" id="copy-button" type="button"><span aria-hidden="true">□</span> Copy dare</button>
+              <button class="primary-button" id="new-dare-button" type="button"><span aria-hidden="true">↻</span> New dare</button>
+            </div>
+            <p class="keyboard-hint">Press <kbd>space</kbd> for a new dare</p>
+          </div>
+        </section>
+
+        <section class="history-section" aria-labelledby="history-title">
+          <div class="section-heading">
+            <div><p class="panel-label">Your little archive</p><h2 id="history-title">Recent dares</h2></div>
+            <button class="text-button" id="clear-history" type="button">Clear history <span aria-hidden="true">↗</span></button>
+          </div>
+          <div class="history-list" id="history-list">
+            <p class="empty-history">Your next few questionable decisions will appear here.</p>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer"><span>Made for good stories.</span><span>GO ON THEN / 2026</span></footer>
+    </div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
